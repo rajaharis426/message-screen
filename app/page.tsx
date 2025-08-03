@@ -35,7 +35,6 @@ export default function MessagingInterface() {
     return () => clearTimeout(timer);
   }, [selectedConversation]);
 
-  // Close sidebar when clicking outside on mobile
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (isMobile && sidebarOpen) {
@@ -81,7 +80,6 @@ export default function MessagingInterface() {
         images: images.length > 0 ? [...images] : undefined,
       };
 
-      // Update the selected conversation with the new message
       setSelectedConversation((prev) => ({
         ...prev,
         messages: [...prev.messages, newMessage],
@@ -96,7 +94,6 @@ export default function MessagingInterface() {
   return (
     <ThemeProvider theme={darkTheme}>
       <StyledContainer >
-        {/* Top Header Bar */}
         <Header
           isMobile={isMobile}
           showChat={showChat}
@@ -105,7 +102,6 @@ export default function MessagingInterface() {
           onSidebarToggle={() => setSidebarOpen(!sidebarOpen)}
         />
 
-        {/* Mobile Overlay */}
         {isMobile && sidebarOpen && (
           <Box
             sx={{
@@ -128,7 +124,6 @@ export default function MessagingInterface() {
         <StyledMainContent>
           <StyledMessagesContainer>
 
-            {/* Messages List Section */}
             <ConversationList
               conversations={conversations}
               selectedConversation={selectedConversation}
@@ -137,7 +132,6 @@ export default function MessagingInterface() {
               onConversationSelect={handleConversationSelect}
             />
 
-            {/* Chat Section */}
             <ChatArea
               selectedConversation={selectedConversation}
               isMobile={isMobile}
@@ -146,13 +140,11 @@ export default function MessagingInterface() {
             />
           </StyledMessagesContainer>
         </StyledMainContent>
-        {/* Menu Drawer */}
         <MenuDrawer
           isMenuOpen={isMenuOpen}
           onClose={() => setIsMenuOpen(false)}
         />
 
-        {/* Subscription Modal */}
         <SubscriptionModal
           open={showSubscription}
           onClose={() => setShowSubscription(false)}

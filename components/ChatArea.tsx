@@ -62,7 +62,6 @@ export default function ChatArea({ selectedConversation, isMobile, showChat, onS
       const newMessage = message.slice(0, start) + emoji + message.slice(end)
       setMessage(newMessage)
       setShowEmojiPicker(false)
-
       setTimeout(() => {
         input.focus()
         input.setSelectionRange(start + emoji.length, start + emoji.length)
@@ -163,9 +162,8 @@ export default function ChatArea({ selectedConversation, isMobile, showChat, onS
     setCursorPosition(cursorPos)
 
     setShowMentions(true)
-    setMentionQuery("") // show full list since user just typed "@"
+    setMentionQuery("")
 
-    // Focus the input and move cursor to end
     setTimeout(() => {
       if (messageInputRef.current) {
         messageInputRef.current.focus()
@@ -280,14 +278,12 @@ export default function ChatArea({ selectedConversation, isMobile, showChat, onS
           {showEmojiPicker && (
             <Box
               className="
-    absolute bottom-full mb-2 p-4 z-10 
-    w-full h-64 overflow-y-auto bg-gray-800 border border-gray-500 rounded-xl
+            absolute bottom-full mb-2 p-4 z-10 
+            w-full h-64 overflow-y-auto bg-gray-800 border border-gray-500 rounded-xl
+            sm:w-[280px] sm:h-[200px]
+            sm:left-1/2 sm:-translate-x-1/2
 
-    sm:w-[280px] sm:h-[200px]
-    sm:left-1/2 sm:-translate-x-1/2
-
-    md:left-0 md:translate-x-0 md:w-[420px]
-  "
+            md:left-0 md:translate-x-0 md:w-[420px]"
             >
               <Grid container spacing={2}>
                 {emojis.map((emoji, index) => (

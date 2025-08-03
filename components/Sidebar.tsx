@@ -35,12 +35,6 @@ export default function Sidebar({ sidebarOpen }: SidebarProps) {
       <div className="text-center mb-8">
 
         <div className="relative inline-block mb-6">
-          {/* <Badge
-            variant="secondary"
-            className="absolute -top-4 -right-18 bg-white text-black text-xs px-2 py-1 rounded-full z-10"
-          >
-            Pro Member
-          </Badge> */}
 
 
           <div className="relative w-40 h-40 mx-auto">
@@ -64,12 +58,14 @@ export default function Sidebar({ sidebarOpen }: SidebarProps) {
 
         </div>
 
+        <p
+          className="text-[23.625px] leading-[29px] font-bold uppercase text-white text-center flex items-center font-inter"
+        >
+          MATTHEW
+          MARCOS
+        </p>
 
-        <h2 className="text-xl font-bold mb-1">MATTHEW</h2>
-        <h2 className="text-xl font-bold ">MARCOS</h2>
-
-
-        <button className="text-white border-2  border-white bg-transparent hover:bg-white hover:text-black rounded-full px-6 py-2 text-sm font-bold transition-colors duration-300">
+        <button className="text-white border-2 mt-3 border-white bg-transparent hover:bg-white hover:text-black rounded-full px-6 py-2 text-sm font-bold transition-colors duration-300">
           VIEW PROFILE™
         </button>
 
@@ -82,12 +78,17 @@ export default function Sidebar({ sidebarOpen }: SidebarProps) {
           <div
             key={index}
             className={`
-              cursor-pointer transition-colors duration-200 text-left
-              ${item.active ? "text-yellow-400 font-semibold" : "text-white  font-semibold"}
-            `}
+    cursor-pointer 
+    transition-colors duration-200 
+    font-inter font-semibold 
+    text-sm leading-5 
+    ${item.active ? "text-yellow-400" : "text-white"} 
+    hover:text-yellow-300
+  `}
           >
             {item.label}
           </div>
+
         ))}
       </nav>
     </div>

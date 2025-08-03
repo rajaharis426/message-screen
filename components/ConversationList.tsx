@@ -37,9 +37,9 @@ export default function ConversationList({ conversations, selectedConversation, 
       <Box className="">
         <Box className="flex items-center justify-between mb-2 p-3">
           <Box className="flex items-center gap-1 p-1">
-            <Typography variant="h5" className="font-bold text-yellow-400 text-lg sm:text-xl">
+            <p className="text-[24px] leading-8 font-bold text-center flex items-center text-[#FFCD1A] font-inter">
               Messages
-            </Typography>
+            </p>
             <Box className="bg-gray-800 rounded-md p-2  text-xs text-white font-medium flex items-center">
               40
             </Box>
@@ -48,7 +48,8 @@ export default function ConversationList({ conversations, selectedConversation, 
         <Divider />
 
         <Box className="flex items-center justify-between p-4">
-          <Typography className="text-white sm:text-base md:font-bold md:text-sm ">All Messages</Typography>
+          <p className="mx-auto w-[91px] h-[17px] font-inter font-semibold text-[14px] leading-[17px] text-[#F2F4FE]">
+            All Messages</p>
           <Box className="flex items-center gap-1">
             <IconButton size="small" className="text-white hover:text-yellow-500">
               <Edit fontSize="small" />
@@ -77,26 +78,18 @@ export default function ConversationList({ conversations, selectedConversation, 
                   .join("")}
               </Avatar>
               <Box className="flex-1 min-w-0">
-                <Box className="flex items-center justify-between mb-0.5">
-                  <Typography
-                    variant="body2"
-                    className={`font-medium overflow-hidden text-ellipsis text-white
-                      }`}
-                  >
+                <Box className="flex items-center justify-between mb-0.5 w-full">
+                  <p className="  h-[17px] font-inter font-bold text-[14px] leading-[17px] text-white">
                     {conversation.name}
-                  </Typography>
+                  </p>
                   <StarBorderIcon
 
                     className={`w-4 h-4 text-white`}
                   />
                 </Box>
-                <Typography
-                  variant="body2"
-                  className={`overflow-hidden text-ellipsis whitespace-nowrap mb-1 ${selectedConversation.id === conversation.id ? "text-gray-700" : "text-gray-400"
-                    }`}
-                >
+                <p className="w-[208.75px] h-[30px] font-inter font-normal text-[12px] leading-[15px] text-[#636363]">
                   {conversation.lastMessage}
-                </Typography>
+                </p>
                 <Box className="flex items-center gap-0.5">
                   {/* <Box className="w-2 h-2 bg-emerald-500 rounded-full" /> */}
                   <QueryBuilderIcon sx={{ fontSize: 16 }} />
